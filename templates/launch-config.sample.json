@@ -1,0 +1,11 @@
+{
+  "token": {
+    "name": "ProjectToken",
+    "symbol": "PTK",
+    "initialOwner": "0x0000000000000000000000000000000000000000"
+  },
+  "networks": {
+    "testnet": { "verify": true },
+    "mainnet": { "verify": true }
+  }
+}
