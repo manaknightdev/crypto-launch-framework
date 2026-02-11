@@ -82,4 +82,39 @@ Trigger actions from the frontend user interface:
 
 ---
 
+## � Optional Modules
+
+The framework includes optional smart contracts for advanced use cases. These are **not required** for basic token deployment.
+
+### LendingPool (Reputation-Based Lending)
+A configurable lending pool with:
+- Multiple tiers with different deadlines (30 days, 90 days, 1 year)
+- Automatic interest calculation
+- Default detection and liquidation
+
+**Setup Guide**: [docs/LENDING_POOL_GUIDE.md](docs/LENDING_POOL_GUIDE.md)
+
+### Multi-Sig Governance (Gnosis Safe)
+Secure multi-signature wallet setup for:
+- TokenDistributor admin control
+- LendingPool management
+- Treasury operations
+
+**Setup Guide**: [docs/MULTISIG_GUIDE.md](docs/MULTISIG_GUIDE.md)
+
+---
+
+## �💎 Tokenomics Distribution (Optional)
+
+For projects requiring vesting schedules (Team, Investors, Community):
+1. **Deploy `TokenDistributor.sol`** with your token address and allocation buckets.
+2. **Mint total supply** to the Distributor contract address.
+3. **Use Multi-Sig Wallets** (e.g., Gnosis Safe) for mainnet beneficiary addresses to enhance security.
+4. **Claim tokens** via the `claim()` function after cliff periods expire.
+
+
+**Setup Guide**: [docs/TOKEN_DISTRIBUTOR_GUIDE.md](docs/TOKEN_DISTRIBUTOR_GUIDE.md)  
+**Example**: [docs/TOKENOMICS_DISTRIBUTION_EXAMPLE.md](docs/TOKENOMICS_DISTRIBUTION_EXAMPLE.md)
+---
+
 For technical deep-dives, see the [Process Guide](docs/TOKEN_PROCESS.md) and [Security Standard](docs/SECURITY_BEST_PRACTICES.md).
